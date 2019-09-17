@@ -17,4 +17,5 @@ Size = 0B 40 (2880) * 02 00 (512) = 1474560B
 Offset to start of FAT(s) - 512
 Root Directory Offset - 512 + 2 * 9 * 512 = 9728
 Offset to data area - 33 * 512 = 16896
+---------------------------------------------------
 
