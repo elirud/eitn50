@@ -1,10 +1,20 @@
-with open('image.dat', encoding='latin 1') as f:
-    data = f.read()
+import codecs
 
-s = data.encode().hex().upper()
+decode_hex = codecs.getdecoder("hex_codec")
 
-print(data[0:9])
+with open('imagehex.dat') as f:
+    datahex = f.read().replace('\n', '').upper()
 
-print(data[0:9].encode().hex().upper())
+for i in range(100):
+    ab = datahex[1024+6*i:1030+6*i]
+    a = ab[3] + ab[0:2]
+    b = ab[4:] + ab[2]
+    print(a, b)
 
-print(len(data[0:9].encode().hex().upper()))
+# s = data.encode().hex().upper()
+#
+# print(data[0:9])
+#
+# print(data[0:9].encode().hex().upper())
+#
+# print(len(data[0:9].encode().hex().upper()))
