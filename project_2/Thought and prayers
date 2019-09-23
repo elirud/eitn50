@@ -1,0 +1,8 @@
+We establish replay protection by creating new keys each session
+We establish confidentiality by encrypting the data.
+
+Data is gona be sent with UDP
+We're gona use Diffie Hellman to agree upon a secret key.
+NONCES and MAC to counter replay?
+Use AES?
+
