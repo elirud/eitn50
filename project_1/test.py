@@ -18,14 +18,20 @@ print("------------------------")
 
 print(datahex)
 print(len(datahex))
+print(unfuck("04034b50"))
 
 print("The 224 root directory entries:\n------------------------")
-for j in range(8):
+for j in range(224):
     print(j+1)
     entry = datahex[19456+64*j:19520+64*j]
-    print(f'Filename: {unfuck(entry[0:8])}\nExtension: {unfuck(entry[8:11])}\nAttributes: {unfuck(entry[11:13])}\n'
-          f'Creation Time: {unfuck(entry[14:16])}\nCreation Date: {unfuck(entry[16:18])}\n'
-          f'Last Access Date: {unfuck(entry[18:20])}\nLast Write Time: {unfuck(entry[22:24])}\n'
-          f'Last Write Date: {unfuck(entry[24:26])}\nFirst Logical Cluster: {unfuck(entry[26:28])}\n'
-          f'File Size: {unfuck(entry[28:])}\n..................................')
+    print(len(entry))
+    print(f'Filename: {unfuck(entry[0:16])}\nExtension: {unfuck(entry[16:22])}\nAttributes: {unfuck(entry[22:24])}\n'
+          f'Creation Time: {unfuck(entry[28:32])}\nCreation Date: {unfuck(entry[32:36])}\n'
+          f'Last Access Date: {unfuck(entry[36:40])}\nLast Write Time: {unfuck(entry[44:48])}\n'
+          f'Last Write Date: {unfuck(entry[48:52])}\nFirst Logical Cluster: {unfuck(entry[52:56])}\n'
+          f'File Size: {unfuck(entry[56:])}\n..................................')
+
+
+print(datahex.find(unfuck("04034b50").upper()))
+
 
