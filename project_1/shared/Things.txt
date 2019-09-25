@@ -1,0 +1,21 @@
+43 11 Volume label - NO NAME
+39 4 Volume id - 24 36 B1 1B
+54 8 File system type (e.g. FAT12, FAT16) - FAT12
+21 1 Media descriptor - F0
+11 2 Bytes per sector - 02 00 (512)
+14 2 Number of reserved sectors - 00 01
+13 1 Sectors per cluster - 01
+22 2 Sectors per FAT - 00 09
+24 2 Sectors per track - 00 12 
+26 2 Number of heads - 00 02
+28 4 Number of hidden sectors - 00 00 00 00
+0 3 Maybe? Says it's jumping to 3C, best guess.
+16 1 Number of FATs - 02
+38 1 Boot signature - 29
+19 2 Total sector count - 0B 40
+Size = 0B 40 (2880) * 02 00 (512) = 1474560B
+Offset to start of FAT(s) - 512
+Root Directory Offset - 512 + 2 * 9 * 512 = 9728
+Offset to data area - 33 * 512 = 16896
+---------------------------------------------------
+

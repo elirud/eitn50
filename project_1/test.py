@@ -1,6 +1,9 @@
 with open('imagehex.dat') as f:
     datahex = f.read().replace('\n', '').upper()
 
+with open('image.dat', 'rb') as f:
+    data = f.read()
+
 
 def unfuck(fucked):
     unfucked = list(reversed([fucked[i:i+2] for i in range(0, len(fucked), 2)]))
@@ -16,12 +19,9 @@ for i in range(100):
     print(a, b)
 print("------------------------")
 
-print(datahex)
-print(len(datahex))
-print(unfuck("04034b50"))
 
 print("The 224 root directory entries:\n------------------------")
-for j in range(224):
+for j in range(21):
     print(j+1)
     entry = datahex[19456+64*j:19520+64*j]
     print(len(entry))
@@ -33,5 +33,6 @@ for j in range(224):
 
 
 print(datahex.find(unfuck("04034b50").upper()))
-
-
+f = open("test.zip", "wb")
+f.write(data[148992:])
+f.close()
